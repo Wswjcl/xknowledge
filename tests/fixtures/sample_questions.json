@@ -1,0 +1,5 @@
+[
+    {"id": "q001", "question": "如何优化 MySQL 慢查询？", "answer": "使用 EXPLAIN 分析执行计划，关注 type、key、rows 字段；在 WHERE/JOIN 列上建索引；避免 SELECT *；使用覆盖索引减少回表"},
+    {"id": "q002", "question": "Redis 缓存穿透怎么解决？", "answer": "布隆过滤器、缓存空值（短期TTL）、接口层参数校验"},
+    {"id": "q003", "question": "什么是微服务的服务降级？", "answer": "系统压力大时，关闭非核心功能，保证核心服务可用；常见策略有熔断、限流、兜底"}
+]
