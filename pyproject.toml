@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qawiki"
+version = "0.1.0"
+description = "QAWiki - Team knowledge base powered by continual learning"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "QAWiki Contributors"}]
+dependencies = [
+    "numpy>=1.24.0",
+    "scikit-learn>=1.3.0",
+    "requests>=2.31.0",
+    "pillow>=10.0.0",
+    "pyyaml>=6.0",
+    "openai>=1.0.0",
+    "tqdm>=4.65.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+parsers = ["python-docx>=0.8.0", "openpyxl>=3.1.0", "markdown-it-py>=3.0"]
+vectordb = ["chromadb>=0.4.0"]
+
+[project.scripts]
+qawiki = "qawiki.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests*", "docs*"]
