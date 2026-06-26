@@ -11,17 +11,17 @@ import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from qawiki.governance import (
+from xknowledge.governance import (
     State, transition, can_transition, IllegalTransition,
     Role, Action, Actor, can, require, resolve_role, PermissionDenied,
     ReviewQueue, TARGET_INSIGHT, TARGET_REFERENCE,
 )
-from qawiki.routing import classify_source, DISTILLABLE, REFERENCE
-from qawiki.core.source import (
+from xknowledge.routing import classify_source, DISTILLABLE, REFERENCE
+from xknowledge.core.source import (
     SourceRegistry, SOURCE_DISTILLABLE, SOURCE_REFERENCE,
     STATE_PENDING, STATE_PUBLISHED, STATE_DEPRECATED, SERVED_STATES,
 )
-from qawiki.references import ReferenceStore
+from xknowledge.references import ReferenceStore
 
 
 # ---------------- governance/states ----------------

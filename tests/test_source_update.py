@@ -19,15 +19,15 @@ import tempfile
 # Allow running from repo root without install.
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from qawiki.parsers.markdown import MarkdownParser
-from qawiki.core.source import (
+from xknowledge.parsers.markdown import MarkdownParser
+from xknowledge.core.source import (
     SourceRegistry,
     SectionDiff,
     hash_text,
     hash_file,
     section_key_for,
 )
-from qawiki.core.utils import (
+from xknowledge.core.utils import (
     load_insight_library,
     load_insight_library_meta,
     save_insight_library,

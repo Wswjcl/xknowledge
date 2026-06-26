@@ -28,9 +28,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.environ.setdefault("INSIGHT_EMBEDDING_API_KEY", "stub-key-for-tests")
 os.environ.setdefault("INSIGHT_EMBEDDING_ENDPOINT", "http://localhost:0/v1")
 
-from qawiki.knowledge import QAKnowledge
-from qawiki.config import QAWikiConfig
-import qawiki.core.retriever as _retriever_mod
+from xknowledge.knowledge import QAKnowledge
+from xknowledge.config import QAWikiConfig
+import xknowledge.core.retriever as _retriever_mod
 
 
 def _install_noop_embeddings():

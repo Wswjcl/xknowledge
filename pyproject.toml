@@ -3,9 +3,9 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "qawiki"
-version = "0.1.0"
-description = "QAWiki - Team knowledge base powered by continual learning"
+name = "xknowledge"
+version = "1.2.0"
+description = "xKnowledge — core knowledge distillation & governance engine for QAWiki"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
@@ -26,7 +26,7 @@ parsers = ["python-docx>=0.8.0", "openpyxl>=3.1.0", "markdown-it-py>=3.0"]
 vectordb = ["chromadb>=0.4.0"]
 
 [project.scripts]
-qawiki = "qawiki.cli:main"
+xknowledge = "xknowledge.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

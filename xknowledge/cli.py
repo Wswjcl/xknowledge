@@ -163,7 +163,7 @@ def cmd_review(args):
         print(f"  [{i['id']}] {i['target_type']:9s} {i['target_id']:20s} "
               f"— {i['title'][:50]}")
         print(f"       by {i['proposed_by']}: {i['reason'][:60]}")
-    print(f"\nUse: qawiki approve <id>  or  qawiki reject <id>")
+    print(f"\nUse: xknowledge approve <id>  or  xknowledge reject <id>")
 
 
 def cmd_approve(args):
@@ -233,7 +233,7 @@ def cmd_status(args):
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="qawiki",
+        prog="xknowledge",
         description="QAWiki - Team knowledge base with continual learning",
     )
     # Global identity flags (parsed for every subcommand).
@@ -244,18 +244,18 @@ def main():
                         help="Act with this role (default: editor)")
     sub = parser.add_subparsers(dest="command")
 
-    # qawiki run
+    # xknowledge run
     p_run = sub.add_parser("run", help="Run full pipeline (Q&A + distillation)")
     p_run.add_argument("--input", "-i", required=True, help="Input JSON/JSONL questions file")
     p_run.add_argument("--output", "-o", default=None, help="Output directory for trajectories")
     p_run.set_defaults(func=cmd_run)
 
-    # qawiki ingest
+    # xknowledge ingest
     p_ingest = sub.add_parser("ingest", help="Ingest documents into knowledge base")
     p_ingest.add_argument("path", help="Path to document or directory")
     p_ingest.set_defaults(func=cmd_ingest)
 
-    # qawiki add (unified source intake with routing)
+    # xknowledge add (unified source intake with routing)
     p_add = sub.add_parser("add", help="Add a source (auto-routes distill vs reference)")
     p_add.add_argument("path", help="Path to document or directory")
     p_add.add_argument("--type", choices=["distillable", "reference"], default=None,
@@ -263,30 +263,30 @@ def main():
     p_add.add_argument("--title", default=None, help="Title (used for reference docs)")
     p_add.set_defaults(func=cmd_add)
 
-    # qawiki review
+    # xknowledge review
     p_review = sub.add_parser("review", help="List pending items awaiting review")
     p_review.set_defaults(func=cmd_review)
 
-    # qawiki approve
+    # xknowledge approve
     p_approve = sub.add_parser("approve", help="Approve a pending review item")
     p_approve.add_argument("item_id", help="Review item id (rv-XXXX) or target id")
     p_approve.set_defaults(func=cmd_approve)
 
-    # qawiki reject
+    # xknowledge reject
     p_reject = sub.add_parser("reject", help="Reject a pending review item")
     p_reject.add_argument("item_id", help="Review item id (rv-XXXX) or target id")
     p_reject.set_defaults(func=cmd_reject)
 
-    # qawiki sources
+    # xknowledge sources
     p_sources = sub.add_parser("sources", help="List registered source documents")
     p_sources.set_defaults(func=cmd_sources)
 
-    # qawiki search
+    # xknowledge search
     p_search = sub.add_parser("search", help="Search the knowledge base")
     p_search.add_argument("query", help="Search query")
     p_search.set_defaults(func=cmd_search)
 
-    # qawiki status
+    # xknowledge status
     p_status = sub.add_parser("status", help="Show knowledge base status")
     p_status.set_defaults(func=cmd_status)
 

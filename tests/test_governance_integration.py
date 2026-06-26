@@ -22,11 +22,11 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.environ.setdefault("INSIGHT_EMBEDDING_API_KEY", "stub-key-for-tests")
 os.environ.setdefault("INSIGHT_EMBEDDING_ENDPOINT", "http://localhost:0/v1")
 
-from qawiki.knowledge import QAKnowledge
-from qawiki.config import QAWikiConfig
-from qawiki.governance import Actor, Role, PermissionDenied
-from qawiki.core.source import STATE_PENDING, STATE_PUBLISHED
-import qawiki.core.retriever as _retriever_mod
+from xknowledge.knowledge import QAKnowledge
+from xknowledge.config import QAWikiConfig
+from xknowledge.governance import Actor, Role, PermissionDenied
+from xknowledge.core.source import STATE_PENDING, STATE_PUBLISHED
+import xknowledge.core.retriever as _retriever_mod
 
 
 # --- stub LLM + retriever (reuse the pattern from test_learn_from_document) ---

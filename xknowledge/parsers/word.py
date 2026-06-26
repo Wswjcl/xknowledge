@@ -28,7 +28,7 @@ class WordParser(BaseParser):
             from docx import Document
         except ImportError:
             raise ImportError(
-                "python-docx is required. Install with: pip install qawiki[parsers]"
+                "python-docx is required. Install with: pip install xknowledge[parsers]"
             )
 
         doc = Document(file_path)

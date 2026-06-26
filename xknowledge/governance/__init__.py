@@ -6,7 +6,7 @@ unaware of governance; ``knowledge.py`` (and the CLI) enforce states and
 permissions around them.
 
 Quick start:
-    from qawiki.governance import (
+    from xknowledge.governance import (
         State, transition, Action, Role, Actor,
         can, require, resolve_role, ReviewQueue,
     )
