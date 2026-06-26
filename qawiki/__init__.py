@@ -16,4 +16,5 @@ from .core import (
     adapt_framework_for_query,
     summarize_rollouts,
     cross_source_insights,
+    SourceRegistry,
 )

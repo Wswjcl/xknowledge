@@ -23,6 +23,13 @@ from .framework import (
 )
 from .summarizer import summarize_rollouts
 from .critic import intra_sample_experiences as cross_source_insights
+from .source import (
+    SourceRegistry,
+    SectionDiff,
+    hash_text,
+    hash_file,
+    section_key_for,
+)
 
 __all__ = [
     "ExperienceLLM", "KnowledgeLLM",
@@ -32,6 +39,7 @@ __all__ = [
     "refine_insight_library", "refine_experience_library",
     "InsightMemoryProvider",
     "load_insight_library", "load_existing",
+    "load_insight_library_meta",
     "save_insight_library", "save_library",
     "load_insights", "load_experiences",
     "format_insights_for_prompt", "format_for_prompt",
@@ -42,4 +50,6 @@ __all__ = [
     "refine_framework_document", "refine_skill_document",
     "summarize_rollouts",
     "cross_source_insights",
+    "SourceRegistry", "SectionDiff",
+    "hash_text", "hash_file", "section_key_for",
 ]
