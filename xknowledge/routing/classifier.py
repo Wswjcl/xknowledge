@@ -239,9 +239,10 @@ def classify_source(
     if c is not None:
         return c
 
-    # 4. Extension heuristic.
+    # 4. Extension heuristic (confidence >= 0.7 catches both
+    # reference .xlsx=0.9 and distillable .md=0.7).
     c = _ext_heuristic(file_path)
-    if c is not None:
+    if c is not None and c.confidence >= 0.7:
         return c
 
     # 5. LLM fallback (needs a content snippet).
