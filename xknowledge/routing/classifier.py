@@ -241,7 +241,7 @@ def classify_source(
 
     # 4. Extension heuristic.
     c = _ext_heuristic(file_path)
-    if c is not None and c.confidence >= 0.9:
+    if c is not None:
         return c
 
     # 5. LLM fallback (needs a content snippet).

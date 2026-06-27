@@ -59,8 +59,6 @@ class MarkdownParser(BaseParser):
             start = m.start()
             end = matches[i + 1].start() if i + 1 < len(matches) else len(content)
             body = content[start:end].strip()
-            if not body:
-                continue
             # Keep the original markdown (with leading '#') in content so
             # downstream summarizers see the heading context. Metadata
             # carries the normalized heading + index for stable keys.

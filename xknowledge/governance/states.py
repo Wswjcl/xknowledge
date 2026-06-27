@@ -142,13 +142,3 @@ def is_served_by_default(state) -> bool:
     """Whether default (viewer) retrieval serves items in this state."""
     return coerce(state) in PUBLISHED_LIKE
 
-
-def default_initial_state(is_automated: bool) -> State:
-    """Pick the initial state for a newly produced item.
-
-    Automated distillation always starts ``pending`` (must be reviewed).
-    Manual submissions by a contributor also start ``pending`` unless the
-    author holds a role that can bypass review (handled by the caller via
-    permissions; this helper only encodes the automated rule).
-    """
-    return State.PENDING if is_automated else State.PENDING

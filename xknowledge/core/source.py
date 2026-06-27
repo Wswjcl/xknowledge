@@ -316,9 +316,9 @@ class SourceRegistry:
             "ingested_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             "sections": dict(sections),
             # Preserve governance fields, then apply explicit overrides.
-            "source_type": source_type or existing.get("source_type", SOURCE_DISTILLABLE),
-            "state": state or existing.get("state", STATE_PUBLISHED),
-            "origin": origin or existing.get("origin", SOURCE_DISTILLABLE),
+            "source_type": source_type if source_type is not None else existing.get("source_type", SOURCE_DISTILLABLE),
+            "state": state if state is not None else existing.get("state", STATE_PUBLISHED),
+            "origin": origin if origin is not None else existing.get("origin", SOURCE_DISTILLABLE),
         }
         self._docs[doc_path] = rec
 
@@ -339,6 +339,9 @@ class SourceRegistry:
                 "content_hash": "",
                 "ingested_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                 "sections": {},
+                "source_type": SOURCE_DISTILLABLE,
+                "state": STATE_PUBLISHED,
+                "origin": SOURCE_DISTILLABLE,
             },
         )
         secs: SectionMap = rec.setdefault("sections", {})

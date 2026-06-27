@@ -23,7 +23,6 @@ from .states import (
     action_for,
     coerce as coerce_state,
     is_served_by_default,
-    default_initial_state,
 )
 from .permissions import (
     Role,
@@ -51,7 +50,6 @@ __all__ = [
     "State", "Transition", "IllegalTransition",
     "PUBLISHED_LIKE", "CONTRIBUTOR_VISIBLE",
     "transition", "can_transition", "action_for",
-    "coerce_state", "is_served_by_default", "default_initial_state",
     # permissions
     "Role", "Action", "Actor", "PermissionDenied",
     "can", "require", "role_can_transition", "require_transition",

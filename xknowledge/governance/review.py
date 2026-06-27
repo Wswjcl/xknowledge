@@ -86,9 +86,18 @@ class ReviewQueue:
             with open(self.path, "r", encoding="utf-8") as f:
                 data = json.load(f)
             raw = data.get("items", []) if isinstance(data, dict) else []
-            self._items = [ReviewItem(**r) for r in raw if isinstance(r, dict)]
         except Exception:
             self._items = []
+            return
+        items = []
+        for r in raw:
+            if not isinstance(r, dict):
+                continue
+            try:
+                items.append(ReviewItem(**r))
+            except Exception:
+                pass
+        self._items = items
 
     def save(self):
         if not self.path:

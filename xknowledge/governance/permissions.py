@@ -210,7 +210,7 @@ def resolve_role(
 
     if manifest_perms and actor.user_id:
         # Find the highest role whose list contains this user.
-        for role in (Role.ADMIN, Role.REVIEWER, Role.EDITOR):
+        for role in (Role.ADMIN, Role.REVIEWER, Role.EDITOR, Role.VIEWER):
             members = manifest_perms.get(role.value + "s") or \
                 manifest_perms.get(role.value) or []
             if actor.user_id in members:
