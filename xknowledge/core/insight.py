@@ -40,7 +40,7 @@ def _strip_markdown_code_blocks(text: str) -> str:
         return text.strip()
     parts = text.split("```")
     if len(parts) > 2:
-        return parts[2].strip()
+        return parts[1].strip()  # fixed: was [2] (after fence), should be [1] (inside fence)
     return (parts[0].strip() if parts else text).strip()
 
 

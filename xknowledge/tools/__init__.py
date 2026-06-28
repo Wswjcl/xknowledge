@@ -1,53 +1,17 @@
-﻿"""
-宸ュ叿妯″潡鍒濆鍖?
-鑷姩瀵煎叆鎵€鏈夊伐鍏峰苟娉ㄥ唽鍒板伐鍏锋敞鍐岃〃
+"""Tools module initialization.
+
+Auto-imports base tool and registry. Concrete tools (CodeInterpreter,
+WebSearch, etc.) are imported lazily by the tool registry.
 """
 
 from .base import BaseTool
-from .tool_registry import TOOL_REGISTRY, register_tool, get_tool, list_tools, get_tool_info
-
-try:
-    from .code_interpreter import CodeInterpreter
-except ImportError:
-    CodeInterpreter = None
-    print("Warning: CodeInterpreter not available")
-
-try:
-    from .web_search import WebSearch
-except ImportError:
-    WebSearch = None
-    print("Warning: WebSearch not available")
-
-try:
-    from .visit import Visit
-except ImportError:
-    Visit = None
-    print("Warning: Visit not available")
-
-try:
-    from .image_search import ImageSearch
-except ImportError:
-    ImageSearch = None
-    print("Warning: ImageSearch not available")
-
-try:
-    from .zoom import ZoomTool
-except ImportError:
-    ZoomTool = None
-    print("Warning: ZoomTool not available")
-
+from .registry import TOOL_REGISTRY, register_tool, get_tool, list_tools, get_tool_info
 
 __all__ = [
-    'BaseTool',
-    'TOOL_REGISTRY',
-    'register_tool',
-    'get_tool',
-    'list_tools',
-    'get_tool_info',
-    'CodeInterpreter',
-    'WebSearch',
-    'Visit',
-    'ImageSearch',
-    'ZoomTool',
+    "BaseTool",
+    "TOOL_REGISTRY",
+    "register_tool",
+    "get_tool",
+    "list_tools",
+    "get_tool_info",
 ]
-

@@ -17,6 +17,7 @@ from tqdm import tqdm
 
 from .config import QAWikiConfig, load_config, print_config
 from .knowledge import QAKnowledge
+from .core.framework import merge_frameworks, refine_framework_document
 
 
 class Pipeline:
